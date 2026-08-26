@@ -1,1 +1,1 @@
-# Sql-Exercicios
+# Sql-curso / projeto
