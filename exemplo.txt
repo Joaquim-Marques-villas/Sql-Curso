@@ -1,1 +1,3 @@
-alteração feita na feature b
+alteração feita na feature B
+=======
+alteração feita na feature A
