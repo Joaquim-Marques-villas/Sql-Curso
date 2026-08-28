@@ -30,4 +30,4 @@ jobs:
 
     steps:
       - name: Deploy simulado
-        run: echo "Deploy realizado com sucesso! ${[ secrets.API_TOKEN ]}"
+        run: echo "Deploy realizado com sucesso! ${{ secrets.API_TOKEN }}"
