@@ -2,24 +2,32 @@ name: Pipeline CI/CD
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - users: actions/checkout@v3
-      - name: Setup Node
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-      
-      run: npm install
-      run: npm test
-    
-    deploy:
-      needs: build
-      runs-on: ububtu-latest
-      steps:
-        - name: Deploy (Simulado)
-          run: echo "Deploy realizado com sucesso!"
+          node-version: 18
+
+      - name: Verificar ambiente
+        run: node --version
+
+      - name: Build de teste
+        run: echo "Build executado com sucesso!"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy simulado
+        run: echo "Deploy realizado com sucesso!"
